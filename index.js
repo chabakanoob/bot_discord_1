@@ -16,6 +16,13 @@ const client = new Client( {
 
 client.once("ready", ()=>{
     console.log(`bot ${client.user.tag} encendido`.blue)
+    client.user.setStatus("idle")
+    console.log(client.user.presence.status)
+
+
+    const testchannel = client.channels.cache
+    // console.log(testchannel)
+    console.log(testchannel.find(channel => channel.name === "text"))
 })
 
 client.login(token)
